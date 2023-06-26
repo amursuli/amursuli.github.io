@@ -28,7 +28,7 @@ export class ResultsComponent {
     return this.correctCount;
   }
 
-  newQuiz(): void {
+  createNewQuiz(): void {
     this.router.navigate(['']);
   }
 }
