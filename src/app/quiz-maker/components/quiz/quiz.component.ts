@@ -20,13 +20,13 @@ export class QuizComponent {
     this.selectedAnswer[this.questions.indexOf(question)] = answer;
     this.questions[position].selectedAnswer = answer;
 
-    if (this.areAllQuestionsAnswered()) {
+    if (this.allQuestionsAnswered()) {
       this.allAnswered = true;
     }
   }
 
-  areAllQuestionsAnswered(): boolean {
-    let allAnswered = true;
+  allQuestionsAnswered(): boolean {
+    let allAnswered: boolean = true;
     this.questions.forEach((question: Result) => {
       if (!question.selectedAnswer) {
         allAnswered = false;
