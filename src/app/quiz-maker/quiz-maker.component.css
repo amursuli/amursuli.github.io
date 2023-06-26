@@ -20,3 +20,8 @@
 #categorySelect{
   border-radius: 5px 0 0 5px;
 }
+
+.error{
+  color: red;
+  font-size: 12px;
+}

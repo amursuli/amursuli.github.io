@@ -4,20 +4,16 @@
   <form [formGroup]="form" (ngSubmit)="createTrivia()" class="d-flex">
     <div class="flex-grow-1 mr-2">
       <select id="categorySelect" formControlName="category" class="form-control">
-        <option value="" selected>Select a category</option>
+        <option value="" selected>Select a category*</option>
         <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
       </select>
-      <div *ngIf="form.get('category')?.invalid && form.get('category')?.touched">Field Category is required.</div>
     </div>
 
     <div class="flex-grow-1 mr-2">
       <select id="difficultySelect" formControlName="difficulty" class="form-control">
-        <option value="" selected>Select difficulty</option>
+        <option value="" selected>Select difficulty*</option>
         <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{ difficulty | titlecase }}</option>
       </select>
-      <div *ngIf="form.get('difficulty')?.invalid && form.get('difficulty')?.touched">
-        Field Difficulty is required.
-      </div>
     </div>
 
     <button id="createBtn" class="btn btn-primary btn-block" type="submit" [disabled]="form.invalid">Create</button>
