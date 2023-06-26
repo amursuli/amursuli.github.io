@@ -1,0 +1,22 @@
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  color: #dee2e6;
+  background-color: #ffffff;
+  border-color: #dee2e6;
+  opacity: 1;
+  border-radius: 0 5px 5px 0;
+}
+
+.btn-primary{
+  color: #575757;
+  background-color: #ffffff;
+  border-color: #575757;
+  border-radius: 0 5px 5px 0;
+}
+
+#difficultySelect{
+  border-radius: 0;
+}
+
+#categorySelect{
+  border-radius: 5px 0 0 5px;
+}

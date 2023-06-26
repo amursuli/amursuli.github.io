@@ -1,0 +1,17 @@
+<div class="quiz mt-3">
+  <div *ngFor="let question of questions; index as i" class="question">
+    <p [innerHTML]="question.question"></p>
+    <div class="answers">
+      <button
+        *ngFor="let answer of question.allAnswers"
+        class="btn mb-2"
+        [ngClass]="{ selected: selectedAnswer[i] === answer }"
+        (click)="selectAnswer(question, answer, i)"
+        [innerHTML]="answer"></button>
+    </div>
+  </div>
+
+  <div class="mt-5 text-center" *ngIf="allAnswered">
+    <button class="btn btn-submit" (click)="submitQuiz()">Submit</button>
+  </div>
+</div>

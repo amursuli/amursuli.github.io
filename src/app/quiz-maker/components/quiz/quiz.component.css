@@ -1,0 +1,30 @@
+.quiz {
+  padding: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answers .btn {
+  margin-right: 10px;
+  color: green;
+  border-color: green;
+  font-size: 14px;
+}
+
+.answers .btn:hover{
+  background-color: green;
+  color: white;
+}
+
+.answers .btn.selected {
+  background-color: green;
+  color: white;
+}
+
+.btn-submit{
+  width: 50%;
+  background-color: #333333;
+  color: white;
+}

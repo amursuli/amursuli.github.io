@@ -1,0 +1,51 @@
+.quiz {
+  padding: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answers .btn {
+  margin-right: 10px;
+  color: green;
+  border-color: green;
+  font-size: 14px;
+}
+
+.answers .btn.correct {
+  background-color: green;
+  color: white;
+}
+
+.answers .btn.incorrect {
+  background-color: red;
+  border-color: red;
+  color: white;
+}
+
+.btn-submit{
+  width: 50%;
+  background-color: #333333;
+  color: white;
+}
+
+.evaluation-results{
+  color:white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+}
+
+.evaluation-results.red{
+  background-color: red;
+}
+
+.evaluation-results.yellow{
+  background-color: yellow;
+  color: #333333;
+}
+
+.evaluation-results.green{
+  background-color: green;
+}

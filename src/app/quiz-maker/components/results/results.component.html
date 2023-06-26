@@ -1,0 +1,31 @@
+<h5>RESULTS</h5>
+
+<div class="quiz mt-4 w-75 m-auto">
+  <div *ngFor="let question of questions" class="question">
+    <p [innerHTML]="question.question"></p>
+    <div class="answers">
+      <button
+        *ngFor="let answer of question.allAnswers"
+        class="btn mb-2"
+        [ngClass]="{
+          correct: question.correct_answer === answer,
+          incorrect: question.selectedAnswer === answer && question.selectedAnswer !== question.correct_answer
+        }"
+        [innerHTML]="answer"></button>
+    </div>
+  </div>
+
+  <div
+    class="evaluation-results m-5"
+    [ngClass]="{
+      red: correctCount <= 1,
+      yellow: correctCount > 1 && correctCount <= 3,
+      green: correctCount > 3
+    }">
+    Your scored {{ correctCount }} out of 5
+  </div>
+
+  <div class="mt-5 text-center">
+    <button class="btn btn-submit" (click)="newQuiz()">New Quiz</button>
+  </div>
+</div>
