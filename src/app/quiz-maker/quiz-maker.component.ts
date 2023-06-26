@@ -13,14 +13,14 @@ import { TriviaCategory, TriviaCategoryDto } from '../core/models/trivia-categor
   styleUrls: ['./quiz-maker.component.css'],
 })
 export class QuizMakerComponent {
-  myForm: FormGroup;
+  form: FormGroup;
   triviaQuiz: Result[] = [];
   categories: TriviaCategory[] = [];
 
   difficulties: string[] = ['easy', 'medium', 'hard'];
 
   constructor(private formBuilder: FormBuilder, private triviaQuizService: TriviaQuizService) {
-    this.myForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       category: ['', Validators.required],
       difficulty: ['', Validators.required],
     });
@@ -43,7 +43,6 @@ export class QuizMakerComponent {
             question.allAnswers = [...question.incorrect_answers, question.correct_answer];
             question.allAnswers.sort(() => Math.random() - 0.5);
           });
-          console.log(this.triviaQuiz);
         },
         error: (err: HttpErrorResponse) => {
           handleApiError(err);
@@ -66,9 +65,9 @@ export class QuizMakerComponent {
   }
 
   createTrivia(): void {
-    if (this.myForm.valid) {
-      const category: string = this.myForm.get('category')?.value;
-      const difficulty: string = this.myForm.get('difficulty')?.value;
+    if (this.form.valid) {
+      const category: string = this.form.get('category')?.value;
+      const difficulty: string = this.form.get('difficulty')?.value;
       this.getTriviaQuiz(category, difficulty);
     }
   }
