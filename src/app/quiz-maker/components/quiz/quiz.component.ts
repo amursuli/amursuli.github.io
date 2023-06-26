@@ -35,7 +35,7 @@ export class QuizComponent {
     return allAnswered;
   }
 
-  submitQuiz() {
+  submitQuiz(): void {
     this.localStorageService.saveTriviaResponse(this.questions);
     this.router.navigate(['results']);
   }

@@ -7,7 +7,7 @@ import { Result } from '../../models/trivia-quiz-dto';
 export class LocalStorageService {
   private localStorage = 'triviaResponse';
 
-  saveTriviaResponse(trivia: Result[]) {
+  saveTriviaResponse(trivia: Result[]): void {
     localStorage.setItem(this.localStorage, JSON.stringify(trivia));
   }
 

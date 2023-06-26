@@ -26,7 +26,7 @@ export class QuizMakerComponent {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getTriviaCategories();
     this.onBeforeUnload();
   }
