@@ -72,8 +72,8 @@ export class QuizMakerComponent {
     }
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  onBeforeUnload(_event?: Event): void {
+  @HostListener('window:beforeunload')
+  onBeforeUnload(): void {
     localStorage.clear();
   }
 }
